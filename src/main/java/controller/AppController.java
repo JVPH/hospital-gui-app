@@ -7,7 +7,6 @@ import model.*;
 import view.AppView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 
 /**
@@ -25,7 +24,7 @@ public class AppController {
         this.theView.addIngresarPacienteListener(new IngresarPacienteListener());
         this.theView.addObtenerDatosListener(new ObtenerDatosListener());
         this.theView.addIngresarMedicoListener(new IngresarMedicoListener());
-        
+        this.theView.addProcesarDatosListener(new ProcesarDatosListener());        
         
     }
     
@@ -55,16 +54,10 @@ public class AppController {
         
         @Override
         public void actionPerformed(ActionEvent e){
-            try{
-                String datosIngresados = "Nombre-Cedula-Edad-Ciudad-EPS-Enfermedad Diagnosticada\n";
-                ArrayList<Paciente> listaPacientes = theModel.getListaPacientes();
-                for(Paciente p:listaPacientes){
-                    datosIngresados += p.toString()+"\n";                    
-                }
-                theView.setTextAreaDatosIngresados(datosIngresados);
-                
+            try{                
+                theView.setTextAreaDatosIngresados(theModel.getDatosIngresados());                
             } catch (Exception ex){
-                theView.displayMessage("Error en la obtencion de datos: "+ex);
+                theView.displayMessage("Error en la obtencion de datos.\nError: "+ex);
             }
         }
         
@@ -84,8 +77,21 @@ public class AppController {
                 
                 
             }catch (Exception ex){
-                theView.displayMessage("Por favor ingresar los datos correctamente: "+ex);
+                theView.displayMessage("Por favor ingresar los datos correctamente.\nError: "+ex);
             }            
+        }
+    }
+    
+    class ProcesarDatosListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e){
+            try{
+                String datosProcesados = theModel.getDatosProcesados();
+                theView.setTextAreaDatosProcesados(datosProcesados);               
+                
+            }catch(Exception ex){
+                theView.displayMessage("Error en el procesamiento de datos.\nError: "+ex);
+            }
         }
     }
     

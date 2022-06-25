@@ -18,6 +18,25 @@ public class Paciente extends Persona{
         this.enfermedadDiagnosticada = enfermedadDiagnosticada;   
        
     }
+
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public Long getNumeroDeCedula() {
+        return numeroDeCedula;
+    }
+
+    public String getEPS() {
+        return eps;
+    }
+
+    public String getEnfermedadDiagnosticada() {
+        return enfermedadDiagnosticada;
+    }
+    
+    
+    
     
     public String clasificarEdad(){
         if(this.edad>=21 & this.edad<=30){

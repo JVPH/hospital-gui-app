@@ -65,6 +65,10 @@ public class AppView extends javax.swing.JFrame {
         return textFieldNombreMedico.getText().trim();
     }
     
+    public void setTextAreaDatosProcesados(String datosProcesados){
+        this.textAreaDatosProcesados.setText(datosProcesados);
+    }
+    
     
 
     public void limpiarTextFieldsPanelIngresarDatosPaciente(){
@@ -95,6 +99,10 @@ public class AppView extends javax.swing.JFrame {
     
     public void addIngresarMedicoListener(ActionListener listenForIngresarMedicoButton){
         buttonIngresarMedico.addActionListener(listenForIngresarMedicoButton);
+    }
+    
+    public void addProcesarDatosListener(ActionListener listenForProcesarDatosButton){
+        buttonProcesarDatos.addActionListener(listenForProcesarDatosButton);
     }
     
     public void displayMessage(String message){
@@ -130,6 +138,10 @@ public class AppView extends javax.swing.JFrame {
         textAreaDatosIngresados = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         buttonObtenerDatos = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        textAreaDatosProcesados = new javax.swing.JTextArea();
+        jLabel12 = new javax.swing.JLabel();
+        buttonProcesarDatos = new javax.swing.JToggleButton();
         panelIngresarDatosMedico = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -164,7 +176,7 @@ public class AppView extends javax.swing.JFrame {
         panelIngresarDatosPacienteLayout.setHorizontalGroup(
             panelIngresarDatosPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelIngresarDatosPacienteLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
+                .addGap(102, 102, 102)
                 .addGroup(panelIngresarDatosPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonIngresarPaciente)
                     .addGroup(panelIngresarDatosPacienteLayout.createSequentialGroup()
@@ -185,7 +197,7 @@ public class AppView extends javax.swing.JFrame {
                             .addComponent(textFieldEdadPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
                             .addComponent(jLabel3))))
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         panelIngresarDatosPacienteLayout.setVerticalGroup(
             panelIngresarDatosPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,28 +238,47 @@ public class AppView extends javax.swing.JFrame {
         buttonObtenerDatos.setText("Obtener Datos");
         buttonObtenerDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        textAreaDatosProcesados.setColumns(20);
+        textAreaDatosProcesados.setRows(5);
+        jScrollPane2.setViewportView(textAreaDatosProcesados);
+
+        jLabel12.setText("Datos Procesados:");
+
+        buttonProcesarDatos.setText("Procesar Datos");
+
         javax.swing.GroupLayout panelProcesarDatosPacienteLayout = new javax.swing.GroupLayout(panelProcesarDatosPaciente);
         panelProcesarDatosPaciente.setLayout(panelProcesarDatosPacienteLayout);
         panelProcesarDatosPacienteLayout.setHorizontalGroup(
             panelProcesarDatosPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelProcesarDatosPacienteLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(41, 41, 41)
                 .addGroup(panelProcesarDatosPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonObtenerDatos)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(632, Short.MAX_VALUE))
+                    .addComponent(buttonObtenerDatos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
+                .addGroup(panelProcesarDatosPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonProcesarDatos))
+                .addGap(41, 41, 41))
         );
         panelProcesarDatosPacienteLayout.setVerticalGroup(
             panelProcesarDatosPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelProcesarDatosPacienteLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel7)
+                .addGroup(panelProcesarDatosPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(buttonObtenerDatos)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGroup(panelProcesarDatosPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(panelProcesarDatosPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonObtenerDatos)
+                    .addComponent(buttonProcesarDatos))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         tabbedPane.addTab("Procesar Datos Paciente", panelProcesarDatosPaciente);
@@ -337,9 +368,11 @@ public class AppView extends javax.swing.JFrame {
     private javax.swing.JButton buttonIngresarMedico;
     private javax.swing.JButton buttonIngresarPaciente;
     private javax.swing.JButton buttonObtenerDatos;
+    private javax.swing.JToggleButton buttonProcesarDatos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -349,11 +382,13 @@ public class AppView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel panelIngresarDatosMedico;
     private javax.swing.JPanel panelIngresarDatosPaciente;
     private javax.swing.JPanel panelProcesarDatosPaciente;
     private javax.swing.JTabbedPane tabbedPane;
     private javax.swing.JTextArea textAreaDatosIngresados;
+    private javax.swing.JTextArea textAreaDatosProcesados;
     private javax.swing.JTextField textFieldCedulaMedico;
     private javax.swing.JTextField textFieldCedulaPaciente;
     private javax.swing.JTextField textFieldCiudadMedico;
