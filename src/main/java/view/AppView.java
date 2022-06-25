@@ -49,6 +49,24 @@ public class AppView extends javax.swing.JFrame {
         this.textAreaDatosIngresados.setText(datosIngresados);
     }
 
+    public Long getTextFieldCedulaMedico() {
+        return Long.parseLong(textFieldCedulaMedico.getText().trim());
+    }
+
+    public String getTextFieldCiudadMedico() {
+        return textFieldCiudadMedico.getText().trim();
+    }
+
+    public int getTextFieldEdadMedico() {
+        return Integer.parseInt(textFieldEdadMedico.getText().trim());
+    }
+
+    public String getTextFieldNombreMedico() {
+        return textFieldNombreMedico.getText().trim();
+    }
+    
+    
+
     public void limpiarTextFieldsPanelIngresarDatosPaciente(){
         this.textFieldCedulaPaciente.setText("");
         this.textFieldCiudadPaciente.setText("");
@@ -56,6 +74,13 @@ public class AppView extends javax.swing.JFrame {
         this.textFieldEdadPaciente.setText("");
         this.textFieldEnfermedadDiagnosticadaPaciente.setText("");
         this.textFieldNombrePaciente.setText("");
+    }
+    
+    public void limpiarTextFieldsPanelIngresarDatosMedico(){
+        this.textFieldEdadMedico.setText("");
+        this.textFieldCiudadMedico.setText("");
+        this.textFieldNombreMedico.setText("");
+        this.textFieldCedulaMedico.setText("");
     }
     
     
@@ -66,6 +91,10 @@ public class AppView extends javax.swing.JFrame {
     
     public void addObtenerDatosListener(ActionListener listenForObtenerDatosButton){
         buttonObtenerDatos.addActionListener(listenForObtenerDatosButton);
+    }
+    
+    public void addIngresarMedicoListener(ActionListener listenForIngresarMedicoButton){
+        buttonIngresarMedico.addActionListener(listenForIngresarMedicoButton);
     }
     
     public void displayMessage(String message){
@@ -101,11 +130,16 @@ public class AppView extends javax.swing.JFrame {
         textAreaDatosIngresados = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         buttonObtenerDatos = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        panelIngresarDatosMedico = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        textFieldNombreMedico = new javax.swing.JTextField();
+        textFieldEdadMedico = new javax.swing.JTextField();
+        textFieldCedulaMedico = new javax.swing.JTextField();
+        textFieldCiudadMedico = new javax.swing.JTextField();
+        buttonIngresarMedico = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -226,36 +260,59 @@ public class AppView extends javax.swing.JFrame {
 
         jLabel11.setText("Ciudad");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        buttonIngresarMedico.setText("Ingresar Datos");
+
+        javax.swing.GroupLayout panelIngresarDatosMedicoLayout = new javax.swing.GroupLayout(panelIngresarDatosMedico);
+        panelIngresarDatosMedico.setLayout(panelIngresarDatosMedicoLayout);
+        panelIngresarDatosMedicoLayout.setHorizontalGroup(
+            panelIngresarDatosMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelIngresarDatosMedicoLayout.createSequentialGroup()
                 .addGap(90, 90, 90)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel10))
-                .addGap(137, 137, 137)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel9))
-                .addContainerGap(709, Short.MAX_VALUE))
+                .addGroup(panelIngresarDatosMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonIngresarMedico)
+                    .addGroup(panelIngresarDatosMedicoLayout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(228, 228, 228)
+                        .addComponent(jLabel11))
+                    .addGroup(panelIngresarDatosMedicoLayout.createSequentialGroup()
+                        .addComponent(textFieldEdadMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(81, 81, 81)
+                        .addComponent(textFieldCiudadMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelIngresarDatosMedicoLayout.createSequentialGroup()
+                        .addGroup(panelIngresarDatosMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(textFieldNombreMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(81, 81, 81)
+                        .addGroup(panelIngresarDatosMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textFieldCedulaMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))))
+                .addContainerGap(504, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        panelIngresarDatosMedicoLayout.setVerticalGroup(
+            panelIngresarDatosMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelIngresarDatosMedicoLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panelIngresarDatosMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jLabel9))
-                .addGap(83, 83, 83)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addGroup(panelIngresarDatosMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textFieldNombreMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldCedulaMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(panelIngresarDatosMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11))
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(panelIngresarDatosMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textFieldEdadMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldCiudadMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addComponent(buttonIngresarMedico)
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
-        tabbedPane.addTab("Ingresar Datos Medico", jPanel1);
+        tabbedPane.addTab("Ingresar Datos Medico", panelIngresarDatosMedico);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -277,6 +334,7 @@ public class AppView extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonIngresarMedico;
     private javax.swing.JButton buttonIngresarPaciente;
     private javax.swing.JButton buttonObtenerDatos;
     private javax.swing.JLabel jLabel1;
@@ -290,17 +348,21 @@ public class AppView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel panelIngresarDatosMedico;
     private javax.swing.JPanel panelIngresarDatosPaciente;
     private javax.swing.JPanel panelProcesarDatosPaciente;
     private javax.swing.JTabbedPane tabbedPane;
     private javax.swing.JTextArea textAreaDatosIngresados;
+    private javax.swing.JTextField textFieldCedulaMedico;
     private javax.swing.JTextField textFieldCedulaPaciente;
+    private javax.swing.JTextField textFieldCiudadMedico;
     private javax.swing.JTextField textFieldCiudadPaciente;
     private javax.swing.JTextField textFieldEPSPaciente;
+    private javax.swing.JTextField textFieldEdadMedico;
     private javax.swing.JTextField textFieldEdadPaciente;
     private javax.swing.JTextField textFieldEnfermedadDiagnosticadaPaciente;
+    private javax.swing.JTextField textFieldNombreMedico;
     private javax.swing.JTextField textFieldNombrePaciente;
     // End of variables declaration//GEN-END:variables
 }

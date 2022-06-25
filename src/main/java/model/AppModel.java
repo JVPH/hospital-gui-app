@@ -12,10 +12,12 @@ import java.util.ArrayList;
  */
 public class AppModel {
     private ArrayList<Paciente> listaPacientes;
+    private ArrayList<Medico> listaMedicos;
     
     
     public AppModel(){
         this.listaPacientes = new ArrayList<>();
+        this.listaMedicos = new ArrayList<>();
     }
     
     public void agregarPaciente(Paciente paciente){
@@ -24,6 +26,14 @@ public class AppModel {
     
     public ArrayList getListaPacientes(){
         return listaPacientes;
+    }
+    
+    public void agregarMedico(Medico medico){
+        listaMedicos.add(medico);
+    }
+    
+    public ArrayList getListaMedicos(){
+        return listaMedicos;
     }
     
 }

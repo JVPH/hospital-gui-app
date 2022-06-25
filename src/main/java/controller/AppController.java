@@ -24,6 +24,7 @@ public class AppController {
         this.theModel = theModel;
         this.theView.addIngresarPacienteListener(new IngresarPacienteListener());
         this.theView.addObtenerDatosListener(new ObtenerDatosListener());
+        this.theView.addIngresarMedicoListener(new IngresarMedicoListener());
         
         
     }
@@ -43,7 +44,7 @@ public class AppController {
                 theView.limpiarTextFieldsPanelIngresarDatosPaciente();           
           
             } catch(Exception ex){
-                theView.displayMessage("Por favor ingresar datos correctamente: "+ex);
+                theView.displayMessage("Por favor ingresar los datos correctamente.\nError: "+ex);
             }
             
         }
@@ -69,7 +70,23 @@ public class AppController {
         
     }
     
-    
-    
+    class IngresarMedicoListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e){
+            try{
+                String nombre = theView.getTextFieldNombreMedico();
+                Long cedula = theView.getTextFieldCedulaMedico();
+                int edad = theView.getTextFieldEdadMedico();
+                String ciudad = theView.getTextFieldCiudadMedico();
+                theModel.agregarMedico(new Medico(nombre,cedula,edad,ciudad));
+                theView.displayMessage("Medico ingresado exitosamente!");
+                theView.limpiarTextFieldsPanelIngresarDatosMedico();
+                
+                
+            }catch (Exception ex){
+                theView.displayMessage("Por favor ingresar los datos correctamente: "+ex);
+            }            
+        }
+    }
     
 }
