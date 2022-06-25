@@ -245,6 +245,7 @@ public class AppView extends javax.swing.JFrame {
         jLabel12.setText("Datos Procesados:");
 
         buttonProcesarDatos.setText("Procesar Datos");
+        buttonProcesarDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout panelProcesarDatosPacienteLayout = new javax.swing.GroupLayout(panelProcesarDatosPaciente);
         panelProcesarDatosPaciente.setLayout(panelProcesarDatosPacienteLayout);
@@ -292,6 +293,7 @@ public class AppView extends javax.swing.JFrame {
         jLabel11.setText("Ciudad");
 
         buttonIngresarMedico.setText("Ingresar Datos");
+        buttonIngresarMedico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout panelIngresarDatosMedicoLayout = new javax.swing.GroupLayout(panelIngresarDatosMedico);
         panelIngresarDatosMedico.setLayout(panelIngresarDatosMedicoLayout);

@@ -13,7 +13,7 @@ import controller.AppController;
  *s
  * @author jvela
  */
-public class MyFirstGuiApp {
+public class MyFirstGUIApp {
 
     public static void main(String[] args) {        
         AppView theView = new AppView();

@@ -274,6 +274,9 @@
             <Component class="javax.swing.JToggleButton" name="buttonProcesarDatos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Procesar Datos"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
@@ -382,6 +385,9 @@
             <Component class="javax.swing.JButton" name="buttonIngresarMedico">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ingresar Datos"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
