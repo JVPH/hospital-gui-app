@@ -90,7 +90,7 @@ public class AppController {
                 theView.setTextAreaDatosProcesados(datosProcesados);               
                 
             }catch(Exception ex){
-                theView.displayMessage("Error en el procesamiento de datos.\nError: "+ex);
+                theView.displayMessage("Aun no hay datos que procesar.");
             }
         }
     }
