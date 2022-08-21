@@ -1,3 +1,3 @@
 # my-first-gui-app
 
-Java swing application using the MVC pattern.
+Java swing application using the MVC design pattern.
